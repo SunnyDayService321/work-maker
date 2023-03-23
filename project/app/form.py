@@ -4,7 +4,7 @@ from .models import List,Card
 
 
 class UserForm(forms.ModelForm):
-
+     
     def __init__(self, *args, **kwargs):
         super(UserForm, self).__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
@@ -15,6 +15,7 @@ class UserForm(forms.ModelForm):
         fields = ("username", "last_name", "first_name", "email",)
 
 class ListForm(forms.ModelForm):
+    
     def __init__(self, *args, **kwargs):
         super(ListForm, self).__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
