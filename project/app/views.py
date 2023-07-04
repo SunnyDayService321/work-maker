@@ -80,9 +80,6 @@ class ListUpdateView(LoginRequiredMixin, UpdateView):
     form_class = ListForm
     success_url = reverse_lazy("app:home")
 
-    def get_success_url(self):
-        return resolve_url('app:lists_detail', pk=self.kwargs['pk'])
-
 class ListDeleteView(LoginRequiredMixin, DeleteView):
     model = List
     template_name = "app/lists/delete.html"
@@ -112,9 +109,6 @@ class CardUpdateView(LoginRequiredMixin, UpdateView):
     template_name = "app/cards/update.html"
     form_class = CardForm
     success_url = reverse_lazy("app:home")
-    
-    def get_success_url(self):
-        return resolve_url('app:cards_detail', pk=self.kwargs['pk'])
     
 class CardDeleteView(LoginRequiredMixin, DeleteView):
     model = Card
